@@ -13,6 +13,7 @@ try:
 	print("Conectando a API Ubidots")
 	api = ApiClient(token="A1E-kzn1qv9m8IDl8HveHrQyYKqzhEpDF3")
 	variable = api.get_variable("5a4dba34c03f9774e0a8dd57")
+	porcentaje_alimento = api.get_variable("5a60647bc03f9707bd47f11d")
 	print("Conexion exitosa!!!")
 except:
 	print("FALLO LA CONEXION API")
@@ -46,9 +47,14 @@ while (comando!='3'):
 				comando2 = raw_input('Ingrese una opcion: ') #Input
 				if comando2 == '1':
 					print('Enviando por puerto serial. Datos: '+comando2)
-					arduino.write(comando) # Mando dato hacia Arduino
+					arduino.write(comando2) # Mando dato hacia Arduino
 				elif comando2 == '2':
-					print('Comando ingresado es '+comando2)
+					print('Enviando por puerto serial. Datos: '+comando2)
+					arduino.write(comando2) # Mando dato hacia Arduino
+					recepcion_arduino=arduino.readline() # Espero recpcion de arduino
+					print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
+					aux = int(recepcion_arduino) # convierto cadena a entero
+					new_value = porcentaje_alimento.save_value({'value': aux})
 				elif comando2 == '3':
 					break
 				elif comando2 == '4':
