@@ -14,6 +14,7 @@ try:
 	api = ApiClient(token="A1E-kzn1qv9m8IDl8HveHrQyYKqzhEpDF3")
 	variable = api.get_variable("5a4dba34c03f9774e0a8dd57")
 	porcentaje_alimento = api.get_variable("5a60647bc03f9707bd47f11d")
+	mostrar = api.get_variable("5a611773c03f97436c5ee58e")
 	print("Conexion exitosa!!!")
 except:
 	print("FALLO LA CONEXION API")
@@ -74,17 +75,23 @@ while (comando!='3'):
 			print(" Para salir presione [Ctrl + c]\n")
 			while True:
 				try:
+					
 					last_value = variable.get_values(1)
 					if last_value[0].get("value") == 1:
 						if pulsador==0:
 							print('Boton virtual: Encendido')
 							print('Enviando por puerto serial. Datos enviados: 1')
 							arduino.write("1") # Mando dato hacia Arduino
-							#pulsador=1
 							new_value = variable.save_value({'value': 0})
-					#elif pulsador==1:
-					#	pulsador=0
-					#	print('Boton virtual: Apagado')
+
+					sleep(1)
+					visualizar = mostrar.get_values(1)
+					if visualizar[0].get("value") == 1:
+						arduino.write(comando) # Mando dato hacia Arduino
+						recepcion_arduino=arduino.readline() # Espero recepcion de arduino
+						print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
+						aux = int(recepcion_arduino) # convierto cadena a entero
+						new_pa = porcentaje_alimento.save_value({'value': aux})
 
 					sleep(1) # Sleep for 1 seconds
 

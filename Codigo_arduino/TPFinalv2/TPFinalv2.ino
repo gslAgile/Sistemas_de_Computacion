@@ -7,6 +7,7 @@ void interrupcion_UART();
 void sensor();
 void flash();
 int calcular_distancia();
+void porcentaje_led(int p_porcentaje);
 
 /* Declaracion de variables globales*/
 
@@ -33,7 +34,9 @@ volatile int duracion;
 volatile int distancia;
 volatile byte flagSD=0; /* Flag del sensor de distancia */
 int porcentaje=0;
-const int PinLed=4;
+const int PinLedRed=4;
+const int PinLedYellow=8;
+const int PinLedGreen=12;
 const int EchoPin = 9;
 const int TriggerPin = 10;
 
@@ -41,7 +44,9 @@ const int TriggerPin = 10;
 void setup(){
   
   /* Configuracion de I/O Digitales*/
-  pinMode(PinLed, OUTPUT);
+  pinMode(PinLedRed, OUTPUT);
+  pinMode(PinLedYellow, OUTPUT);
+  pinMode(PinLedGreen, OUTPUT);
 
   /* Configuraciones para sensor ultrasonico: sensor de distancia */
   pinMode(TriggerPin, OUTPUT);  /* trigger como salida */
@@ -87,12 +92,24 @@ void loop(){
     distancia = calcular_distancia();
     if(distancia>0 && distancia<17)
     {
-      porcentaje = (distancia*100)/16;
+      if(distancia==4)
+        porcentaje= 100;
+
+      else if(distancia==5)
+        porcentaje=85;
+
+      else if(distancia==6)
+        porcentaje=70;
+
+      else
+        porcentaje = 100 - ((distancia*100)/16);
     }
     else
       porcentaje = 0;
 
-    Serial.println(porcentaje);    // envio de valor de distancia por monitor
+    porcentaje_led(porcentaje);
+
+    Serial.println(porcentaje);    // envio de valor de porcentaje por monitor
   }
 }
 
@@ -110,11 +127,36 @@ int calcular_distancia()
   return duracion/58.2;          /* distancia medida en centimetros */
 }
 
+void porcentaje_led(int p_porcentaje)
+{
+  if(p_porcentaje<=100 && p_porcentaje>66)
+    {
+      digitalWrite(PinLedRed, LOW);
+      digitalWrite(PinLedYellow, LOW);
+      digitalWrite(PinLedGreen, HIGH);
+    }
+    
+    else if(p_porcentaje<=66 && p_porcentaje>33)
+    {
+      digitalWrite(PinLedRed, LOW);
+      digitalWrite(PinLedYellow, HIGH);
+      digitalWrite(PinLedGreen, LOW);
+    }
+
+    else
+    {
+      digitalWrite(PinLedRed, HIGH);
+      digitalWrite(PinLedYellow, LOW);
+      digitalWrite(PinLedGreen, LOW);
+    }
+}
+
 /* Interrupcion por timer 2*/
 void flash()
 {
   contador++;
-  if(contador==2 && flagRx==1) /* si ai recepcion RX por UART */
+  
+  if(contador==1 && flagRx==1) /* si ai recepcion RX por UART */
   {
     flagRx=0;
     if(Serial.available()) {        /* Si está disponible */
@@ -129,9 +171,7 @@ void flash()
   }
   
   if(contador == 5)
-  {
-    contador = 0;
-    
+  { 
     if(flagIE==1)
       flagIE=2;
   }
@@ -142,7 +182,6 @@ void sensor()
 {
   if(flagIE==0) /* if para evitar el antirrebote, ya que flagIE se hace 0 luego de los 20 ms*/
   {
-    digitalWrite(PinLed, !digitalRead(PinLed));
     contador=0;
     flagIE=1;
   }
