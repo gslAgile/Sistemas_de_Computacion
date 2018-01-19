@@ -184,6 +184,7 @@ void sensor()
   {
     contador=0;
     flagIE=1;
+    flagSD=1;
   }
 }
 
