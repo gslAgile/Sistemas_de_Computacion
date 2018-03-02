@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:Requirements="http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks http://www.eclipse.org/papyrus/0.7.0/SysML/Requirements http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements">
+  <uml:Model xmi:id="_0GwbAB3XEeizEvRbf4CTog" name="AutomaticPetFeeder">
+    <packagedElement xmi:type="uml:Package" xmi:id="_xCtJQB3ZEei6vbUXysYmdw" name="Comportamiento">
+      <packagedElement xmi:type="uml:Package" xmi:id="_yrrlUB3xEei5Ocndoakrog" name="Casos de Uso">
+        <packagedElement xmi:type="uml:Actor" xmi:id="_FFP9oB3yEei5Ocndoakrog" name="Usuario"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_NR85UB3yEei5Ocndoakrog" name="UseCase1"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_OTnxsB3yEei5Ocndoakrog" name="UseCase2"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_zU7qkB3ZEei6vbUXysYmdw" name="Requerimientos">
+      <packagedElement xmi:type="uml:Package" xmi:id="_OLOXkB3aEei6vbUXysYmdw" name="Objetivo">
+        <packagedElement xmi:type="uml:Class" xmi:id="_nMTZ8B3bEei6vbUXysYmdw" name="Objetivo"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="__aDCQB3ZEei6vbUXysYmdw" name="Requerimientos funcionales">
+        <packagedElement xmi:type="uml:Class" xmi:id="_8wuSwB3dEei6vbUXysYmdw" name="RF1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_cyKO8B3eEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_doJbwB3eEei6vbUXysYmdw" name="RF2"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_qvMxkB3eEei6vbUXysYmdw" name="RF3">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_qvNYoB3eEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_bWklQB3fEei6vbUXysYmdw" name="RF4">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_bWklQR3fEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_g2XOwB3fEei6vbUXysYmdw" name="RF5">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_g2XOwR3fEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_hn9DwB3fEei6vbUXysYmdw" name="RF6">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_hn9DwR3fEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_3s_y0B3gEei6vbUXysYmdw" name="DeriveRF1" client="_doJbwB3eEei6vbUXysYmdw" supplier="__aDCQB3ZEei6vbUXysYmdw"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_ny5RIB3hEei6vbUXysYmdw" name="DeriveRF2" client="_bWklQB3fEei6vbUXysYmdw" supplier="_doJbwB3eEei6vbUXysYmdw"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="__wtfsB3iEei6vbUXysYmdw" name="DeriveRF2" client="_qvMxkB3eEei6vbUXysYmdw" supplier="_doJbwB3eEei6vbUXysYmdw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_C1mjIB3aEei6vbUXysYmdw" name="Requerimientos no funcionales">
+        <packagedElement xmi:type="uml:Class" xmi:id="_YjbLYB3jEei6vbUXysYmdw" name="RNF1">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_YjbLYR3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_pEOrQB3jEei6vbUXysYmdw" name="RNF3">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_pEOrQR3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_pKoOMB3jEei6vbUXysYmdw" name="RNF2">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_pKoOMR3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_roCr0B3jEei6vbUXysYmdw" name="RNF7">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_roCr0R3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_rwYvgB3jEei6vbUXysYmdw" name="RNF6">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_rwYvgR3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_r7sAkB3jEei6vbUXysYmdw" name="RNF5">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_r7sAkR3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_sKM9sB3jEei6vbUXysYmdw" name="RNF4">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_sKM9sR3jEei6vbUXysYmdw" name="RF1"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_3kpzUB3ZEei6vbUXysYmdw" name="Estructura">
+      <packagedElement xmi:type="uml:Package" xmi:id="_82qXIB3nEei6vbUXysYmdw" name="Diagrama de Contexto">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_dWDWcB3vEei6vbUXysYmdw">
+          <body>El usuario utiliza una computadora que contiene la interfaz para comunicarse con el hardware del sistema APF. El harware entonces recibe las ordenes directas del usuario o por medio de la computadora y de esta manera lleva a cabo la funcionalidad solicitada, que puede estar asociada a sensar un valor, configurar un temporizador, modificar variables o accionar el alimentador. De esta manera se carga alimento y la mascota se alimenta.</body>
+        </ownedComment>
+        <packagedElement xmi:type="uml:Class" xmi:id="_b3ApwB3oEei6vbUXysYmdw" name="Contexto">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Zmi7oR3rEei6vbUXysYmdw" name="" type="_93BgkB3qEei6vbUXysYmdw" aggregation="composite" association="_ZmhtgB3rEei6vbUXysYmdw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6S4ZgB3sEei6vbUXysYmdw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6S7c0B3sEei6vbUXysYmdw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_bYDVgR3rEei6vbUXysYmdw" name="" type="_1ALtoB3oEei6vbUXysYmdw" aggregation="composite" association="_bYCucB3rEei6vbUXysYmdw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7zIrUB3sEei6vbUXysYmdw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7zQAEB3sEei6vbUXysYmdw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_c5FDYB3rEei6vbUXysYmdw" name="" type="_djfu0B3qEei6vbUXysYmdw" aggregation="composite" association="_c5EcUB3rEei6vbUXysYmdw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_42CoEB3sEei6vbUXysYmdw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_42LyAB3sEei6vbUXysYmdw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_dpa7MR3rEei6vbUXysYmdw" name="" type="_u6BLMB3pEei6vbUXysYmdw" aggregation="composite" association="_dpaUIB3rEei6vbUXysYmdw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2fpYcB3sEei6vbUXysYmdw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2fwtMB3sEei6vbUXysYmdw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_f1qwUB3rEei6vbUXysYmdw" name="" type="_FJSCsB3qEei6vbUXysYmdw" aggregation="composite" association="_f1piMB3rEei6vbUXysYmdw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ggoY4h3rEei6vbUXysYmdw" name="" type="_j7RlsB3pEei6vbUXysYmdw" aggregation="composite" association="_ggnx0B3rEei6vbUXysYmdw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hSeFgh3rEei6vbUXysYmdw" name="" type="_Sc0VUB3qEei6vbUXysYmdw" aggregation="composite" association="_hSdecB3rEei6vbUXysYmdw">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0lG-YB3sEei6vbUXysYmdw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0lW2AB3sEei6vbUXysYmdw" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_1ALtoB3oEei6vbUXysYmdw" name="Usuario"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_j7RlsB3pEei6vbUXysYmdw" name="Alimentador de mascota (Pet feeder)">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ggo_8B3rEei6vbUXysYmdw" name="" type="_b3ApwB3oEei6vbUXysYmdw" association="_ggnx0B3rEei6vbUXysYmdw"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_txF0QB3pEei6vbUXysYmdw" name="Alimentador de mascota"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_ujFR4B3pEei6vbUXysYmdw" name="CopyOf_Alimentador de mascota_1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_u6BLMB3pEei6vbUXysYmdw" name="Aplicacion APF">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_dpa7Mh3rEei6vbUXysYmdw" name="" type="_b3ApwB3oEei6vbUXysYmdw" association="_dpaUIB3rEei6vbUXysYmdw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_FJSCsB3qEei6vbUXysYmdw" name="Arduino - Hardware">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_f1qwUR3rEei6vbUXysYmdw" name="" type="_b3ApwB3oEei6vbUXysYmdw" association="_f1piMB3rEei6vbUXysYmdw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_Sc0VUB3qEei6vbUXysYmdw" name="Mascota"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_djfu0B3qEei6vbUXysYmdw" name="Computadora">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_c5FDYR3rEei6vbUXysYmdw" name="" type="_b3ApwB3oEei6vbUXysYmdw" association="_c5EcUB3rEei6vbUXysYmdw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_93BgkB3qEei6vbUXysYmdw" name="API: Ubidots">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Zmi7oh3rEei6vbUXysYmdw" name="" type="_b3ApwB3oEei6vbUXysYmdw" association="_ZmhtgB3rEei6vbUXysYmdw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_ZmhtgB3rEei6vbUXysYmdw" memberEnd="_Zmi7oR3rEei6vbUXysYmdw _Zmi7oh3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZmiUkB3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Zmi7oB3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_bYCucB3rEei6vbUXysYmdw" memberEnd="_bYDVgR3rEei6vbUXysYmdw _bYD8kB3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bYCucR3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bYDVgB3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_bYD8kB3rEei6vbUXysYmdw" name="contexto_1" type="_b3ApwB3oEei6vbUXysYmdw" association="_bYCucB3rEei6vbUXysYmdw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_c5EcUB3rEei6vbUXysYmdw" visibility="package" memberEnd="_c5FDYB3rEei6vbUXysYmdw _c5FDYR3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_c5EcUR3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_c5EcUh3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_dpaUIB3rEei6vbUXysYmdw" memberEnd="_dpa7MR3rEei6vbUXysYmdw _dpa7Mh3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dpaUIR3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dpa7MB3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_f1piMB3rEei6vbUXysYmdw" memberEnd="_f1qwUB3rEei6vbUXysYmdw _f1qwUR3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f1qJQB3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f1qJQR3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_ggnx0B3rEei6vbUXysYmdw" visibility="package" memberEnd="_ggoY4h3rEei6vbUXysYmdw _ggo_8B3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ggoY4B3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ggoY4R3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_hSdecB3rEei6vbUXysYmdw" memberEnd="_hSeFgh3rEei6vbUXysYmdw _hSeskB3rEei6vbUXysYmdw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hSeFgB3rEei6vbUXysYmdw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hSeFgR3rEei6vbUXysYmdw" key="nature" value="SysML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_hSeskB3rEei6vbUXysYmdw" name="contexto_1" type="_b3ApwB3oEei6vbUXysYmdw" association="_hSdecB3rEei6vbUXysYmdw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Signal" xmi:id="_oKEIEB3uEei6vbUXysYmdw" name="Usuario"/>
+        <packagedElement xmi:type="uml:Signal" xmi:id="_qWvbAB3uEei6vbUXysYmdw" name="Computadora"/>
+        <packagedElement xmi:type="uml:Signal" xmi:id="_wprYsB3uEei6vbUXysYmdw" name="Alimentador de mascota"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_2vUhQB3uEei6vbUXysYmdw" name="Mascota"/>
+        <packagedElement xmi:type="uml:Signal" xmi:id="_VVwfEB3vEei6vbUXysYmdw" name="Signal1"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0KAjUB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0KFb0B3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_TZ_nULU5EduiKqCzJMWbGw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0ccXIB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cc-MB3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_Gx8MgLX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0ceMUB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cezYB3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_fSw28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0cgBgB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cgokB3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_rpx28LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0ch2sB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cidwB3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_5WYJ0LX7EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0cjr4B3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0ckS8B3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_C2zXMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0clhEB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0clhER3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_NxdG4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0cnWQB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cnWQR3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_OOJC4LX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0cokYB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cpLcB3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_meOioLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0cqZkB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0crAoB3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_nAF5kLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0csOwB3XEeizEvRbf4CTog">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0cs10B3XEeizEvRbf4CTog" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_neZmMLX8EduFmqQsrNB9lw"/>
+    </profileApplication>
+  </uml:Model>
+  <Requirements:Requirement xmi:id="_nP4SYB3bEei6vbUXysYmdw" text="El proposito del sitema APF es automatizar un alimentador de mascotas y extender sus funcionalidades a traves de internet." id="000" base_Class="_nMTZ8B3bEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_8xNa8B3dEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_8wuSwB3dEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_cyPHcB3eEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_cyKO8B3eEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_doNGIB3eEei6vbUXysYmdw" text="La aplicación de software del APF podrá ser accedida desde internet por medio de cualquier dispositivo con acceso a internet." id="02" base_Class="_doJbwB3eEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_qvS4MB3eEei6vbUXysYmdw" text="El APF debe permitir realizar más de una cargas de alimento de forma automática por medio de la aplicación." id="03" base_Class="_qvMxkB3eEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_qvUtYB3eEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_qvNYoB3eEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_bWnBgB3fEei6vbUXysYmdw" text="El APF debe permitir aplicar cargas fijas cada ciertos intervalos de tiempo. Cuando se encuentre activado este modo se deberá indicar tal situación tanto por hardware como por software." id="04" base_Class="_bWklQB3fEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_bWoPoB3fEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_bWklQR3fEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_g2a5IB3fEei6vbUXysYmdw" text="El APF debe indicar al usuario el porcentaje que resta en su depósito." id="05" base_Class="_g2XOwB3fEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_g2dVYB3fEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_g2XOwR3fEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_hoAHEB3fEei6vbUXysYmdw" text="El APF debe notificarnos por sms cuando el recipiente de carga contenga solo el 33% o menos de carga." id="06" base_Class="_hn9DwB3fEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_hoCjUB3fEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_hn9DwR3fEei6vbUXysYmdw"/>
+  <Requirements:DeriveReqt xmi:id="_3xYjkB3gEei6vbUXysYmdw" base_Abstraction="_3s_y0B3gEei6vbUXysYmdw"/>
+  <Requirements:DeriveReqt xmi:id="_n0kFEB3hEei6vbUXysYmdw" base_Abstraction="_ny5RIB3hEei6vbUXysYmdw"/>
+  <Requirements:DeriveReqt xmi:id="__y3b0B3iEei6vbUXysYmdw" base_Abstraction="__wtfsB3iEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_Yje1wB3jEei6vbUXysYmdw" text="El APF deberá admitir un modo de control físico a través del hardware. Este modo estará siempre habilitado y puede estar en combinación con cualquier otro modo." id="01" base_Class="_YjbLYB3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_YjhSAB3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_YjbLYR3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_pERukB3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_pEOrQR3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_pETjwB3jEei6vbUXysYmdw" text="El APF deberá admitir un modo de control remoto a través de internet. Este modo será habilitado desde el software de la computadora y podrá habilitarse en conjunto con el modo físico por hardware." id="03" base_Class="_pEOrQB3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_pKrRgB3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_pKoOMR3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_pKsfoB3jEei6vbUXysYmdw" text="El APF deberá admitir un modo de control local a través de una computadora por software. Este modo será habilitado desde el software de la computadora y podrá habilitarse en conjunto con el modo físico por hardware." id="02" base_Class="_pKoOMB3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_roFvIB3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_roCr0R3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_roG9QB3jEei6vbUXysYmdw" text="La comunicación entre el sistema embebido y la aplicación de la computadora del APF será mediante UART." id="07" base_Class="_roCr0B3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_rwbLwB3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_rwYvgR3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_rwdA8B3jEei6vbUXysYmdw" text="La aplicación de interfaz entre una computadora y el APF deberá ser programada en python." id="06" base_Class="_rwYvgB3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_r7vD4B3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_r7sAkR3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_r7wSAB3jEei6vbUXysYmdw" text="El software del sistema embebido del APF se programara por la IDE de arduino." id="05" base_Class="_r7sAkB3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_sKPZ8B3jEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_sKM9sR3jEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_sKQBAB3jEei6vbUXysYmdw" text="El hardware del sistema embebido del APF deberá controlar el circuito eléctrico mediante una placa arduino uno." id="04" base_Class="_sKM9sB3jEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_b3DGAB3oEei6vbUXysYmdw" base_Class="_b3ApwB3oEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_j7UB8B3pEei6vbUXysYmdw" base_Class="_j7RlsB3pEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_txHpcB3pEei6vbUXysYmdw" base_Class="_txF0QB3pEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_ujHHEB3pEei6vbUXysYmdw" base_Class="_ujFR4B3pEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_u6DAYB3pEei6vbUXysYmdw" base_Class="_u6BLMB3pEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_FJT34B3qEei6vbUXysYmdw" base_Class="_FJSCsB3qEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_djhkAB3qEei6vbUXysYmdw" base_Class="_djfu0B3qEei6vbUXysYmdw"/>
+  <Blocks:Block xmi:id="_93DVwB3qEei6vbUXysYmdw" base_Class="_93BgkB3qEei6vbUXysYmdw"/>
+  <Blocks:Unit xmi:id="_2vVvYB3uEei6vbUXysYmdw" base_InstanceSpecification="_2vUhQB3uEei6vbUXysYmdw"/>
+</xmi:XMI>
