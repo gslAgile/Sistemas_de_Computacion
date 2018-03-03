@@ -4,8 +4,166 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_xCtJQB3ZEei6vbUXysYmdw" name="Comportamiento">
       <packagedElement xmi:type="uml:Package" xmi:id="_yrrlUB3xEei5Ocndoakrog" name="Casos de Uso">
         <packagedElement xmi:type="uml:Actor" xmi:id="_FFP9oB3yEei5Ocndoakrog" name="Usuario"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_NR85UB3yEei5Ocndoakrog" name="UseCase1"/>
-        <packagedElement xmi:type="uml:UseCase" xmi:id="_OTnxsB3yEei5Ocndoakrog" name="UseCase2"/>
+        <packagedElement xmi:type="uml:Device" xmi:id="_wB5LQB6DEeiPi6yS5N9O7w" name="Sistema APF" useCase="_Bkp3YB6EEeiPi6yS5N9O7w _2vyKIB6EEeiPi6yS5N9O7w _X5cIEB6EEeiPi6yS5N9O7w _J551oB6FEeiPi6yS5N9O7w _h4CCsB6FEeiPi6yS5N9O7w _-vxDAB6FEeiPi6yS5N9O7w _tB220B6FEeiPi6yS5N9O7w _2ensMB6FEeiPi6yS5N9O7w _Q8JT4B6GEeiPi6yS5N9O7w">
+          <ownedUseCase xmi:type="uml:UseCase" xmi:id="_xnSmUB6EEeiPi6yS5N9O7w" name="Accionar pulsador" visibility="package"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_Bkp3YB6EEeiPi6yS5N9O7w" name="Cargar alimento" visibility="public" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_qpkXgB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Actor" xmi:id="_Gl8nAB6EEeiPi6yS5N9O7w" name="Servidor Ubidots"/>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_X5cIEB6EEeiPi6yS5N9O7w" name="Visualizar porcentaje de carga" visibility="public" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_sBZGEB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_2vyKIB6EEeiPi6yS5N9O7w" name="Acceso a aplicacion APF" visibility="public" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_qpjwcB6KEeiPi6yS5N9O7w" extendedCase="_Bkp3YB6EEeiPi6yS5N9O7w" extensionLocation="_qpkXgB6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_sBYfAB6KEeiPi6yS5N9O7w" extendedCase="_X5cIEB6EEeiPi6yS5N9O7w" extensionLocation="_sBZGEB6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_utRdgB6KEeiPi6yS5N9O7w" extendedCase="_-vxDAB6FEeiPi6yS5N9O7w" extensionLocation="_utRdgR6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_vmj18B6KEeiPi6yS5N9O7w" extendedCase="_J551oB6FEeiPi6yS5N9O7w" extensionLocation="_vmj18R6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_wjyTMB6KEeiPi6yS5N9O7w" extendedCase="_h4CCsB6FEeiPi6yS5N9O7w" extensionLocation="_wjy6QB6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_zK--8B6KEeiPi6yS5N9O7w" extendedCase="_tB220B6FEeiPi6yS5N9O7w" extensionLocation="_zK_mAB6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_0014sB6KEeiPi6yS5N9O7w" extendedCase="_Q8JT4B6GEeiPi6yS5N9O7w" extensionLocation="_002fwB6KEeiPi6yS5N9O7w"/>
+          <extend xmi:type="uml:Extend" xmi:id="_3qvu0B6KEeiPi6yS5N9O7w" extendedCase="_2ensMB6FEeiPi6yS5N9O7w" extensionLocation="_3qvu0R6KEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_J551oB6FEeiPi6yS5N9O7w" name="Solicitar porcentaje de carga" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_vmj18R6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_h4CCsB6FEeiPi6yS5N9O7w" name="Establecer conexion a internet" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_wjy6QB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_tB220B6FEeiPi6yS5N9O7w" name="Establcer numero de cargas" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_zK_mAB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_2ensMB6FEeiPi6yS5N9O7w" name="Aplicar cargas fijas" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_3qvu0R6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_-vxDAB6FEeiPi6yS5N9O7w" name="Visualizar modo de cargas fijas" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_utRdgR6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:UseCase" xmi:id="_Q8JT4B6GEeiPi6yS5N9O7w" name="Notificar SMS cuando carga es &lt;= 33%" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_002fwB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_dYEpEB6GEeiPi6yS5N9O7w" memberEnd="_dYITcB6GEeiPi6yS5N9O7w _dYI6gB6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dYHFUB6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dYHFUR6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_dYITcB6GEeiPi6yS5N9O7w" name="cargar alimento" type="_Bkp3YB6EEeiPi6yS5N9O7w" association="_dYEpEB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_dYI6gB6GEeiPi6yS5N9O7w" name="usuario" type="_FFP9oB3yEei5Ocndoakrog" association="_dYEpEB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_eMAncB6GEeiPi6yS5N9O7w" memberEnd="_eMBOgh6GEeiPi6yS5N9O7w _eMB1kB6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eMBOgB6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eMBOgR6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_eMBOgh6GEeiPi6yS5N9O7w" name="visualizar porcentaje de carga" type="_X5cIEB6EEeiPi6yS5N9O7w" association="_eMAncB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_eMB1kB6GEeiPi6yS5N9O7w" name="usuario" type="_FFP9oB3yEei5Ocndoakrog" association="_eMAncB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_ewPV4B6GEeiPi6yS5N9O7w" memberEnd="_ewP88R6GEeiPi6yS5N9O7w _ewP88h6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ewPV4R6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ewP88B6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_ewP88R6GEeiPi6yS5N9O7w" name="visualizar modo de cargas fijas" type="_-vxDAB6FEeiPi6yS5N9O7w" association="_ewPV4B6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_ewP88h6GEeiPi6yS5N9O7w" name="usuario" type="_FFP9oB3yEei5Ocndoakrog" association="_ewPV4B6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_fkFNoB6GEeiPi6yS5N9O7w" memberEnd="_fkF0sh6GEeiPi6yS5N9O7w _fkGbwB6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fkF0sB6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fkF0sR6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_fkF0sh6GEeiPi6yS5N9O7w" name="acceso a aplicacion apf" type="_2vyKIB6EEeiPi6yS5N9O7w" association="_fkFNoB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_fkGbwB6GEeiPi6yS5N9O7w" name="usuario" type="_FFP9oB3yEei5Ocndoakrog" association="_fkFNoB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_iXvBAB6GEeiPi6yS5N9O7w" memberEnd="_iXvoEh6GEeiPi6yS5N9O7w _iXwPIB6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iXvoEB6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iXvoER6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_iXvoEh6GEeiPi6yS5N9O7w" name="establecer conexion a internet" type="_h4CCsB6FEeiPi6yS5N9O7w" association="_iXvBAB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_iXwPIB6GEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_iXvBAB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_jVzLwB6GEeiPi6yS5N9O7w" memberEnd="_jVzy0h6GEeiPi6yS5N9O7w _jVzy0x6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jVzy0B6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jVzy0R6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_jVzy0h6GEeiPi6yS5N9O7w" name="establcer numero de cargas" type="_tB220B6FEeiPi6yS5N9O7w" association="_jVzLwB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_jVzy0x6GEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_jVzLwB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_kxH6QB6GEeiPi6yS5N9O7w" memberEnd="_kxIhUh6GEeiPi6yS5N9O7w _kxJIYB6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kxIhUB6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kxIhUR6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_kxIhUh6GEeiPi6yS5N9O7w" name="aplicar cargas fijas" type="_2ensMB6FEeiPi6yS5N9O7w" association="_kxH6QB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_kxJIYB6GEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_kxH6QB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_mANjkB6GEeiPi6yS5N9O7w" memberEnd="_mAOxsR6GEeiPi6yS5N9O7w _mAOxsh6GEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mAOKoB6GEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mAOxsB6GEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_mAOxsR6GEeiPi6yS5N9O7w" name="notificar de sms cuando carga es &lt;= 33%" type="_Q8JT4B6GEeiPi6yS5N9O7w" association="_mANjkB6GEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_mAOxsh6GEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_mANjkB6GEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_jZiU4B6JEeiPi6yS5N9O7w" memberEnd="_jZjjAh6JEeiPi6yS5N9O7w _jZjjAx6JEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jZjjAB6JEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jZjjAR6JEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_jZjjAh6JEeiPi6yS5N9O7w" name="cargar alimento" type="_Bkp3YB6EEeiPi6yS5N9O7w" association="_jZiU4B6JEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_jZjjAx6JEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_jZiU4B6JEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_lhUgwB6JEeiPi6yS5N9O7w" memberEnd="_lhVH0h6JEeiPi6yS5N9O7w _lhVH0x6JEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lhVH0B6JEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lhVH0R6JEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_lhVH0h6JEeiPi6yS5N9O7w" name="visualizar porcentaje de carga" type="_X5cIEB6EEeiPi6yS5N9O7w" association="_lhUgwB6JEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_lhVH0x6JEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_lhUgwB6JEeiPi6yS5N9O7w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_wKs6QB6JEeiPi6yS5N9O7w" memberEnd="_wKthUh6JEeiPi6yS5N9O7w _wKuIYB6JEeiPi6yS5N9O7w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wKthUB6JEeiPi6yS5N9O7w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wKthUR6JEeiPi6yS5N9O7w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_wKthUh6JEeiPi6yS5N9O7w" name="visualizar modo de cargas fijas" type="_-vxDAB6FEeiPi6yS5N9O7w" association="_wKs6QB6JEeiPi6yS5N9O7w"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_wKuIYB6JEeiPi6yS5N9O7w" name="servidor ubidots" type="_Gl8nAB6EEeiPi6yS5N9O7w" association="_wKs6QB6JEeiPi6yS5N9O7w"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_ePvV4B5PEei3CJhlKV9zDg" name="Diagrama de actividades">
+        <packagedElement xmi:type="uml:Activity" xmi:id="_laJuIB5PEei3CJhlKV9zDg" name="Carga de alimento" node="_By39kB5YEei3CJhlKV9zDg _HvlMkB5YEei3CJhlKV9zDg _NTtjgB5YEei3CJhlKV9zDg _fBsoMB5YEei3CJhlKV9zDg _rXGeoB5YEei3CJhlKV9zDg _OAXYsB5ZEei3CJhlKV9zDg _e6180B5ZEei3CJhlKV9zDg _fWbsoB5ZEei3CJhlKV9zDg _fgzwoB5ZEei3CJhlKV9zDg _fq6H0B5ZEei3CJhlKV9zDg __ESwEB5aEei3CJhlKV9zDg _Vn-YYB5bEei3CJhlKV9zDg _MOsfYB5cEei3CJhlKV9zDg _kEX7EB5cEei3CJhlKV9zDg __H_SYB5cEei3CJhlKV9zDg _JD3ssB5dEei3CJhlKV9zDg _88G0MB5dEei3CJhlKV9zDg _sqag0B59EeiPi6yS5N9O7w _6Z2sUB59EeiPi6yS5N9O7w _Gcc7gB5-EeiPi6yS5N9O7w _ZZnJEB5-EeiPi6yS5N9O7w _tgD58B5-EeiPi6yS5N9O7w">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_98cCEB5YEei3CJhlKV9zDg" target="_By39kB5YEei3CJhlKV9zDg" source="_rXGeoB5YEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ezqr4B5bEei3CJhlKV9zDg" target="__ESwEB5aEei3CJhlKV9zDg" source="_By39kB5YEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_f3ybUB5bEei3CJhlKV9zDg" name="true" target="_HvlMkB5YEei3CJhlKV9zDg" source="__ESwEB5aEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_hI-WYB5bEei3CJhlKV9zDg" name="false" target="_By39kB5YEei3CJhlKV9zDg" source="__ESwEB5aEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_a9RzsB5cEei3CJhlKV9zDg" target="_MOsfYB5cEei3CJhlKV9zDg" source="_HvlMkB5YEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_rYY7QB5cEei3CJhlKV9zDg" target="_kEX7EB5cEei3CJhlKV9zDg" source="_MOsfYB5cEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_VOkH8B5dEei3CJhlKV9zDg" name="p &lt;= 33%" target="_JD3ssB5dEei3CJhlKV9zDg" source="_kEX7EB5cEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_V6-iAB5dEei3CJhlKV9zDg" name="p >75%" target="__H_SYB5cEei3CJhlKV9zDg" source="_kEX7EB5cEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_Wky7EB5dEei3CJhlKV9zDg" name="(p > 33%) &amp;&amp; (p &lt; 76%)" target="_OAXYsB5ZEei3CJhlKV9zDg" source="_kEX7EB5cEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_Ba7I4B5eEei3CJhlKV9zDg" target="_88G0MB5dEei3CJhlKV9zDg" source="_OAXYsB5ZEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_CLTc8B5eEei3CJhlKV9zDg" target="_88G0MB5dEei3CJhlKV9zDg" source="__H_SYB5cEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_D-AJoB5eEei3CJhlKV9zDg" target="_NTtjgB5YEei3CJhlKV9zDg" source="_88G0MB5dEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_edMNIB59EeiPi6yS5N9O7w" target="_88G0MB5dEei3CJhlKV9zDg" source="_JD3ssB5dEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_z2yn8B59EeiPi6yS5N9O7w" target="_sqag0B59EeiPi6yS5N9O7w" source="_NTtjgB5YEei3CJhlKV9zDg"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_BebiUB5-EeiPi6yS5N9O7w" target="_6Z2sUB59EeiPi6yS5N9O7w" source="_sqag0B59EeiPi6yS5N9O7w"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_PqIzEB5-EeiPi6yS5N9O7w" target="_Gcc7gB5-EeiPi6yS5N9O7w" source="_6Z2sUB59EeiPi6yS5N9O7w"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_nUGuAB5-EeiPi6yS5N9O7w" target="_ZZnJEB5-EeiPi6yS5N9O7w" source="_Gcc7gB5-EeiPi6yS5N9O7w"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_pghiQB5-EeiPi6yS5N9O7w" name="false" target="_fBsoMB5YEei3CJhlKV9zDg" source="_ZZnJEB5-EeiPi6yS5N9O7w"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_15Y8YB5-EeiPi6yS5N9O7w" name="true" target="_tgD58B5-EeiPi6yS5N9O7w" source="_ZZnJEB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_By39kB5YEei3CJhlKV9zDg" name="Girar motor" incoming="_98cCEB5YEei3CJhlKV9zDg _hI-WYB5bEei3CJhlKV9zDg" outgoing="_ezqr4B5bEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_HvlMkB5YEei3CJhlKV9zDg" name="Sensar carga" incoming="_f3ybUB5bEei3CJhlKV9zDg" outgoing="_a9RzsB5cEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_NTtjgB5YEei3CJhlKV9zDg" name="Envia datos (UART)" incoming="_D-AJoB5eEei3CJhlKV9zDg" outgoing="_z2yn8B59EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_fBsoMB5YEei3CJhlKV9zDg" name="Fin de carga" incoming="_pghiQB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:InitialNode" xmi:id="_rXGeoB5YEei3CJhlKV9zDg" name="Presionar pulsador" outgoing="_98cCEB5YEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_OAXYsB5ZEei3CJhlKV9zDg" name="Enciende Led verde" incoming="_Wky7EB5dEei3CJhlKV9zDg" outgoing="_Ba7I4B5eEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="_e6180B5ZEei3CJhlKV9zDg" name="CallBehaviorAction1" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="_fWbsoB5ZEei3CJhlKV9zDg" name="CallBehaviorAction2" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="_fgzwoB5ZEei3CJhlKV9zDg" name="CallBehaviorAction3" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="_fq6H0B5ZEei3CJhlKV9zDg" name="CallBehaviorAction4" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="__ESwEB5aEei3CJhlKV9zDg" name="n cargas necesarias" incoming="_ezqr4B5bEei3CJhlKV9zDg" outgoing="_f3ybUB5bEei3CJhlKV9zDg _hI-WYB5bEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CallBehaviorAction" xmi:id="_Vn-YYB5bEei3CJhlKV9zDg" name="CallBehaviorAction5" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_MOsfYB5cEei3CJhlKV9zDg" name="Obtener porcentaje de carga (p)" incoming="_a9RzsB5cEei3CJhlKV9zDg" outgoing="_rYY7QB5cEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="_kEX7EB5cEei3CJhlKV9zDg" name="Desicion de porcentaje" incoming="_rYY7QB5cEei3CJhlKV9zDg" outgoing="_VOkH8B5dEei3CJhlKV9zDg _V6-iAB5dEei3CJhlKV9zDg _Wky7EB5dEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="__H_SYB5cEei3CJhlKV9zDg" name="Enciende LED rojo" incoming="_V6-iAB5dEei3CJhlKV9zDg" outgoing="_CLTc8B5eEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_JD3ssB5dEei3CJhlKV9zDg" name="Enciende LED amarillo" incoming="_VOkH8B5dEei3CJhlKV9zDg" outgoing="_edMNIB59EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:MergeNode" xmi:id="_88G0MB5dEei3CJhlKV9zDg" name="" incoming="_Ba7I4B5eEei3CJhlKV9zDg _CLTc8B5eEei3CJhlKV9zDg _edMNIB59EeiPi6yS5N9O7w" outgoing="_D-AJoB5eEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_sqag0B59EeiPi6yS5N9O7w" name="Recepcion de datos (UART)" incoming="_z2yn8B59EeiPi6yS5N9O7w" outgoing="_BebiUB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_6Z2sUB59EeiPi6yS5N9O7w" name="Retroalimenta aplicacion APF" incoming="_BebiUB5-EeiPi6yS5N9O7w" outgoing="_PqIzEB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_Gcc7gB5-EeiPi6yS5N9O7w" name="Actualizar variables con API" incoming="_PqIzEB5-EeiPi6yS5N9O7w" outgoing="_nUGuAB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:DecisionNode" xmi:id="_ZZnJEB5-EeiPi6yS5N9O7w" name="Si p &lt;=33%" incoming="_nUGuAB5-EeiPi6yS5N9O7w" outgoing="_pghiQB5-EeiPi6yS5N9O7w _15Y8YB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_tgD58B5-EeiPi6yS5N9O7w" name="Notificar con sms" incoming="_15Y8YB5-EeiPi6yS5N9O7w"/>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_zU7qkB3ZEei6vbUXysYmdw" name="Requerimientos">
@@ -60,7 +218,8 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_3kpzUB3ZEei6vbUXysYmdw" name="Estructura">
       <packagedElement xmi:type="uml:Package" xmi:id="_82qXIB3nEei6vbUXysYmdw" name="Diagrama de Contexto">
         <ownedComment xmi:type="uml:Comment" xmi:id="_dWDWcB3vEei6vbUXysYmdw">
-          <body>El usuario utiliza una computadora que contiene la interfaz para comunicarse con el hardware del sistema APF. El harware entonces recibe las ordenes directas del usuario o por medio de la computadora y de esta manera lleva a cabo la funcionalidad solicitada, que puede estar asociada a sensar un valor, configurar un temporizador, modificar variables o accionar el alimentador. De esta manera se carga alimento y la mascota se alimenta.</body>
+          <body>El usuario utiliza una computadora que contiene la interfaz para comunicarse con el hardware del sistema APF. El harware entonces recibe las ordenes directas del usuario o por medio de la computadora y de esta manera lleva a cabo la funcionalidad solicitada, que puede estar asociada a sensar un valor, configurar un temporizador, modificar variables o accionar el alimentador. De esta manera se carga alimento y la mascota se puede alimentar.
+</body>
         </ownedComment>
         <packagedElement xmi:type="uml:Class" xmi:id="_b3ApwB3oEei6vbUXysYmdw" name="Contexto">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_Zmi7oR3rEei6vbUXysYmdw" name="" type="_93BgkB3qEei6vbUXysYmdw" aggregation="composite" association="_ZmhtgB3rEei6vbUXysYmdw">
@@ -216,7 +375,7 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML_PROFILES/SysML.profile.uml#_neZmMLX8EduFmqQsrNB9lw"/>
     </profileApplication>
   </uml:Model>
-  <Requirements:Requirement xmi:id="_nP4SYB3bEei6vbUXysYmdw" text="El proposito del sitema APF es automatizar un alimentador de mascotas y extender sus funcionalidades a traves de internet." id="000" base_Class="_nMTZ8B3bEei6vbUXysYmdw"/>
+  <Requirements:Requirement xmi:id="_nP4SYB3bEei6vbUXysYmdw" text="El proposito del sitema APF es automatizar un alimentador de mascotas y extender sus funcionalidades a traves de una aplicacion e internet." id="000" base_Class="_nMTZ8B3bEei6vbUXysYmdw"/>
   <Requirements:Requirement xmi:id="_8xNa8B3dEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_8wuSwB3dEei6vbUXysYmdw"/>
   <Requirements:Requirement xmi:id="_cyPHcB3eEei6vbUXysYmdw" text="El APF debe permitir cargar alimento automáticamente por medio de un pulsador físico y desde una aplicación de software." id="01" base_Class="_cyKO8B3eEei6vbUXysYmdw"/>
   <Requirements:Requirement xmi:id="_doNGIB3eEei6vbUXysYmdw" text="La aplicación de software del APF podrá ser accedida desde internet por medio de cualquier dispositivo con acceso a internet." id="02" base_Class="_doJbwB3eEei6vbUXysYmdw"/>
