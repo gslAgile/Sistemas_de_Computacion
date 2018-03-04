@@ -26,7 +26,7 @@ while (comando!='3'):
 		if comando == '1':
 			print('MODO LOCAL HABILITADO')
 			comando2="1"
-			while (comando2!='7'):
+			while (comando2!='9'):
 				print("\n--- Interfaz Pet Feeder: MODO LOCAL ---")
 				print(" MENU DE OPCIONES:")
 				print(" 1- Cargar alimento.")
@@ -34,8 +34,10 @@ while (comando!='3'):
 				print(" 3- Incrementar angulo de posicion de carga.")
 				print(" 4- Decrementar angulo de posicion de carga.")
 				print(" 5- Modificar numero de cargas.")
-				print(" 6- Salir del modo local.")
-				print(" 7- Salir de aplicacion.")
+				print(" 6- Habilitar y configurar modo de cargas fijas por tiempo.")
+				print(" 7- Deshabilitar modo de cargas fijas por tiempo.")
+				print(" 8- Salir del modo local.")
+				print(" 9- Salir de aplicacion.")
 				print("---------------------------------------\n")
 				comando2 = raw_input('Ingrese una opcion: ') #Input
 				if comando2 == '1':
@@ -133,10 +135,59 @@ while (comando!='3'):
 					else:
 						print('Arduino-Uno-Config:~$ El valor ingresado no es admitido')
 
-
 				elif comando2 == '6':
-					break
+					arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador
+					sleep(0.3)
+					arduino.write("r") # Mando dato hacia Arduino, borro segundos configurados
+					sleep(0.3)
+					arduino.write("n") # Mando dato hacia Arduino, borro minutos configurados
+
+					# Configuro nuevos segundos y minutos
+					print('Arduino-Uno-Config:~$ Ingrese los minutos y segundos que desea establecer.')
+					segundos_op6_char = raw_input(' Numero de segundos: ') #Input
+					segundos_op6 = int(segundos_op6_char) # convierto cadena a entero
+					if(segundos_op6 > 60):
+						segundos_op6=60
+						print('Arduino-Uno-Config:~$ El maximo valor es 60. El mismo se a configurado.')
+					elif(segundos_op6<1):
+						segundos_op6=1
+						print('Arduino-Uno-Config:~$ El minimo valor es 1. El mismo se a configurado.')
+					elif((segundos_op6>0) and (segundos_op6<=60)):
+						print('Arduino-Uno-Config:~$ Numero de segundos configurado a '+segundos_op6_char)
+						contador_op6 = segundos_op6;
+						while contador_op6>0:
+							arduino.write("s") # Mando dato hacia Arduino
+							contador_op6= contador_op6-1;
+							sleep(0.1)
+					else:
+						print('Arduino-Uno-Config:~$ El valor ingresado no es admitido')
+
+					minutos_op6_char = raw_input(' Numero de minutos: ') #Input
+					minutos_op6 = int(minutos_op6_char) # convierto cadena a entero
+					if(minutos_op6 > 60):
+						minutos_op6=60
+						print('Arduino-Uno-Config:~$ El maximo valor es 60. El mismo se a configurado.')
+					elif(minutos_op6<0):
+						minutos_op6=0
+						print('Arduino-Uno-Config:~$ El minimo valor es 0. El mismo se a configurado.')
+					elif((minutos_op6>=0) and (minutos_op6<=60)):
+						print('Arduino-Uno-Config:~$ Numero de segundos configurado a '+minutos_op6_char)
+						contador_op6 = minutos_op6;
+						while contador_op6>0:
+							arduino.write("m") # Mando dato hacia Arduino
+							contador_op6= contador_op6-1;
+							sleep(0.1)
+					else:
+						print('Arduino-Uno-Config:~$ El valor ingresado no es admitido')
+
+					arduino.write("4") # Mando dato hacia Arduino, habilito modo de cargas por temporizador
+
 				elif comando2 == '7':
+					arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador
+
+				elif comando2 == '8':
+					break
+				elif comando2 == '9':
 					print "\nCerrando aplicacion...."
 					arduino.close() # Finalizamos la comunicacion UART
 					sys.exit()

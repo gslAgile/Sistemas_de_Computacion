@@ -30,6 +30,12 @@ volatile byte flagIE=0;
 
 /* Variables interrupcion por timer 2*/
 volatile int contador=0;
+volatile int contador_temp=0;
+volatile int segundos_conf=10;
+volatile int minutos_conf=0;
+volatile int segundos=0;
+volatile int minutos=0;
+volatile byte flagTemp=0;
 
 /* Otras variables globales*/
 volatile int duracion;
@@ -201,6 +207,38 @@ void flash()
         
         flagConfigP=4;
       }
+      else if (c == '4') {        /* Si es una '4', habilitar modo de cargas por temporizador */
+         flagTemp=1;
+         contador_temp=0;
+         segundos=0;
+         minutos=0;
+      }
+      else if(c == 'S' || c == 's')
+      {
+        segundos_conf=segundos_conf+1;
+        if(segundos_conf>60)
+          segundos_conf=60;
+      }
+      else if(c == 'R' || c == 'r')
+      {
+        segundos_conf=0;
+      }
+      else if(c == 'M' || c == 'm')
+      {
+        minutos_conf=minutos_conf+1;
+        if(minutos_conf>60)
+          minutos_conf=60;
+      }
+      else if(c == 'N' || c == 'n')
+      {
+        minutos_conf=0;
+      }
+      else if (c == '5') {        /* Si es una '5', deshabilitar modo de cargas por temporizador */
+         flagTemp=0;
+         contador_temp=0;
+         segundos=0;
+         minutos=0;
+      }
       c=0; /* Limpiamos dato de recepcion*/
     }
   }
@@ -215,6 +253,30 @@ void flash()
   {
     if(flagConfigP==1)
       flagConfigP=2;
+  }
+
+  if(flagTemp)
+  {
+    contador_temp++;
+    if(contador_temp==10)
+    {
+      segundos++;
+      contador_temp=0;
+    }
+
+    if(segundos==60)
+    {
+      minutos++;
+      segundos=0;
+    }
+
+    if(minutos==minutos_conf && segundos==segundos_conf)
+    {
+      contador=0;
+      flagIE=1;
+      segundos=0;
+      minutos=0;
+    }
   }
 }
 
