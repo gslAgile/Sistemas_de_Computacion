@@ -8,22 +8,11 @@ import serial
 from ubidots import ApiClient
 from time import sleep
 
-# Excepcion para verificar si se conecto correctamente con la API de ubidots
-try:
-	print("Conectando a API Ubidots")
-	api = ApiClient(token="A1E-kzn1qv9m8IDl8HveHrQyYKqzhEpDF3")
-	variable = api.get_variable("5a4dba34c03f9774e0a8dd57")
-	porcentaje_alimento = api.get_variable("5a60647bc03f9707bd47f11d")
-	mostrar = api.get_variable("5a611773c03f97436c5ee58e")
-	print("Conexion exitosa!!!")
-except:
-	print("FALLO LA CONEXION API")
-
-
 #arduino = serial.Serial('/dev/ttyACM0', 9600)
 arduino = serial.Serial('/dev/ttyUSB0', 9600) 
 comando="1"
 pulsador=0
+contador_op1=1
 
 while (comando!='3'):
 	try:
@@ -37,28 +26,117 @@ while (comando!='3'):
 		if comando == '1':
 			print('MODO LOCAL HABILITADO')
 			comando2="1"
-			while (comando2!='4'):
+			while (comando2!='7'):
 				print("\n--- Interfaz Pet Feeder: MODO LOCAL ---")
 				print(" MENU DE OPCIONES:")
 				print(" 1- Cargar alimento.")
 				print(" 2- Ver porcentaje de alimento.")
-				print(" 3- Salir del modo local.")
-				print(" 4- Salir de aplicacion.")
+				print(" 3- Incrementar angulo de posicion de carga.")
+				print(" 4- Decrementar angulo de posicion de carga.")
+				print(" 5- Modificar numero de cargas.")
+				print(" 6- Salir del modo local.")
+				print(" 7- Salir de aplicacion.")
 				print("---------------------------------------\n")
 				comando2 = raw_input('Ingrese una opcion: ') #Input
 				if comando2 == '1':
-					print('Enviando por puerto serial. Datos: '+comando2)
-					arduino.write(comando2) # Mando dato hacia Arduino
+					contador_op1_temp=contador_op1
+					while(contador_op1_temp>0):
+						print('Enviando por puerto serial. Datos: '+comando2)
+						arduino.write(comando2) # Mando dato hacia Arduino
+						contador_op1_temp=contador_op1_temp-1
+						sleep(0.8)
 				elif comando2 == '2':
 					print('Enviando por puerto serial. Datos: '+comando2)
 					arduino.write(comando2) # Mando dato hacia Arduino
 					recepcion_arduino=arduino.readline() # Espero recpcion de arduino
 					print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
-					aux = int(recepcion_arduino) # convierto cadena a entero
-					new_value = porcentaje_alimento.save_value({'value': aux})
+					#aux = int(recepcion_arduino) # convierto cadena a entero # Saco lineas pq no son del modo remoto
+					#new_value = porcentaje_alimento.save_value({'value': aux}) # Saco lineas pq no son del modo remoto
 				elif comando2 == '3':
-					break
+					continuar_op3="1"
+					while (continuar_op3=='1'):
+						print('Enviando por puerto serial. Datos: '+comando2)
+						arduino.write(comando2) # Mando dato hacia Arduino
+						recepcion_arduino2=arduino.readline() # Espero recpcion de arduino
+						aux = int(recepcion_arduino2) # convierto cadena a entero
+						if aux==1:
+							print('Arduino-Uno-Config:~$ Ingrese un valor de angulo multiplo de 10')
+							valor_angulo = raw_input(' Valor de angulo: ') #Input
+							angulo_int = int(valor_angulo) # convierto cadena a entero
+							angulo_int = angulo_int/10;
+							if(angulo_int>9): # ya que giro maximo es de 180
+								angulo_int=9;
+							
+							if(angulo_int<1):
+								angulo_int=1;
+
+							if((angulo_int <=9) and (angulo_int>0)):
+								contador_op3 = angulo_int;
+								while contador_op3>0:
+									arduino.write("i") # Mando dato hacia Arduino
+									contador_op3= contador_op3-1;
+									sleep(0.5)
+
+							else:
+								print('Valor incorrecto')
+
+
+						else:
+							print('Arduino-Uno-Config:~$ Fallo peticion de incremento/decremento de angulo, recepcion: '+aux)
+						continuar_op3 = raw_input('Continuar posicionando? Ingrese 1 para continuar, o 0 para salir: ') #Input
+
 				elif comando2 == '4':
+					continuar_op4="1"
+					while (continuar_op4=='1'):
+						print('Enviando por puerto serial. Datos: 3')
+						arduino.write("3") # Mando dato hacia Arduino
+						recepcion_arduino2=arduino.readline() # Espero recpcion de arduino
+						aux = int(recepcion_arduino2) # convierto cadena a entero
+						if aux==1:
+							print('Arduino-Uno-Config:~$ Ingrese un valor de angulo multiplo de 10')
+							valor_angulo = raw_input(' Valor de angulo: ') #Input
+							angulo_int = int(valor_angulo) # convierto cadena a entero
+							angulo_int = angulo_int/10;
+							if(angulo_int>18): # ya que giro maximo es de 180
+								angulo_int=18;
+							
+							if(angulo_int<1):
+								angulo_int=1;
+
+							if((angulo_int <=18) and (angulo_int>0)):
+								contador_op4 = angulo_int;
+								while contador_op4>0:
+									arduino.write("d") # Mando dato hacia Arduino
+									contador_op4= contador_op4-1;
+									sleep(0.5)
+
+							else:
+								print('Valor incorrecto')
+
+
+						else:
+							print('Arduino-Uno-Config:~$ Fallo peticion de incremento/decremento de angulo, recepcion: '+aux)
+						continuar_op4 = raw_input('Continuar posicionando? Ingrese 1 para continuar, o 0 para salir: ') #Input
+				
+				elif comando2 == '5':
+					print('Arduino-Uno-Config:~$ Ingrese el numero de cargas que desea establecer.')
+					contador_op1_char = raw_input(' Numero de cargas: ') #Input
+					contador_op1 = int(contador_op1_char) # convierto cadena a entero
+					if(contador_op1 > 10):
+						contador_op1=10
+						print('Arduino-Uno-Config:~$ El maximo valor es 10. El mismo se a configurado.')
+					elif(contador_op1<1):
+						contador_op1=1
+						print('Arduino-Uno-Config:~$ El minimo valor es 1. El mismo se a configurado.')
+					elif((contador_op1>0) and (contador_op1<=10)):
+						print('Arduino-Uno-Config:~$ Numero de carga configurado a '+contador_op1_char)
+					else:
+						print('Arduino-Uno-Config:~$ El valor ingresado no es admitido')
+
+
+				elif comando2 == '6':
+					break
+				elif comando2 == '7':
 					print "\nCerrando aplicacion...."
 					arduino.close() # Finalizamos la comunicacion UART
 					sys.exit()
@@ -69,6 +147,18 @@ while (comando!='3'):
 					print('Intente nuevamente.')
 
 		elif comando == '2': # Analisis de variable API Ubidots cada 1 segundo
+
+			# Excepcion para verificar si se conecto correctamente con la API de ubidots
+			try:
+				print("Conectando a API Ubidots")
+				api = ApiClient(token="A1E-kzn1qv9m8IDl8HveHrQyYKqzhEpDF3")
+				variable = api.get_variable("5a4dba34c03f9774e0a8dd57")
+				porcentaje_alimento = api.get_variable("5a60647bc03f9707bd47f11d")
+				mostrar = api.get_variable("5a611773c03f97436c5ee58e")
+				print("Conexion exitosa!!!")
+			except:
+				print("FALLO LA CONEXION API")
+			
 			print('MODO REMOTO HABILITADO')
 			print("\n--- Pet Feeder en MODO REMOTO ---")
 			print(" Analizando variables desde API UBIDOTS")

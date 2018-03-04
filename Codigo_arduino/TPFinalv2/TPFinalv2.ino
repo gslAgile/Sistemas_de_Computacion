@@ -16,6 +16,8 @@ Servo servo1;           /* crea objeto servo*/
 const int PINSERVO = 7;       /* pin 7 conectado a señal del servo */
 const int PULSOMIN = 650;     /* pulso minimo en microsegundos */
 const int PULSOMAX = 2400;    /* pulso maximo en microsegundos */
+volatile byte flagConfigP=0;   /* flag de configuracion de posicion final*/
+volatile int pos_start=0;
 
 /* Variables interrupcion externa 0 */
 const int PinUARTInterrupt=2; /* pin de interrupcion externa para deteccion de recepcion UART: pin 3*/
@@ -74,16 +76,29 @@ void setup(){
 
 /* Funcion principal luego de iniciar variables*/
 void loop(){
-
+  
   if(flagIE==1)
   {
-    servo1.write(0);    /* ubica el servo a 0 grados */
+      servo1.write(pos_start);    /* ubica el servo a 0 grados, segun calibracion de posicion realizada */
   }
     
   if(flagIE==2)
   {
-    servo1.write(90);    /* ubica el servo a 90 grados */
+    servo1.write(pos_start+90);    /* ubica el servo a 90 grados, segun calibracion de posicion realizada */
     flagIE=0;
+  }
+  
+  if(flagConfigP==2)
+  {
+    int envio_tx=1;
+    Serial.println(envio_tx, DEC);      /* envio de valor 1 por UART, para calibrar angulo*/
+    flagConfigP=3;
+  }
+  
+  if(flagConfigP==4)
+  {
+    servo1.write(pos_start);    /* ubica el servo a posicion final en grados */
+    flagConfigP=0;
   }
 
   if(flagSD==1)
@@ -109,7 +124,7 @@ void loop(){
 
     porcentaje_led(porcentaje);
 
-    Serial.println(porcentaje);    // envio de valor de porcentaje por monitor
+    Serial.println(porcentaje);    /* envio de valor de porcentaje por monitor*/
   }
 }
 
@@ -164,9 +179,29 @@ void flash()
       if (c == '1') {               /* Si es '1', giro servo */
          contador=0;
          flagIE=1;
-      } else if (c == '2') {        /* Si es una '2', envio calculo de distancia por UART */
+      } 
+      else if (c == '2') {        /* Si es una '2', envio calculo de distancia por UART */
          flagSD=1;
       }
+      else if (c == '3') {        /* Si es una '3', configuracion de posicion cero en servo */
+         flagConfigP=1;
+         contador=0;
+      }
+      else if (c == 'I' || c == 'i') {        /* Si es una 'I', se trata de un incremento de angulo */
+        pos_start=pos_start+10;
+        if(pos_start > 90)
+          pos_start=90;
+
+        flagConfigP=4;
+      }
+      else if (c == 'D' || c == 'd') {        /* Si es una 'D', se trata de un decremento de angulo */
+        pos_start=pos_start-10;
+        if(pos_start < -180)
+          pos_start= -180;
+        
+        flagConfigP=4;
+      }
+      c=0; /* Limpiamos dato de recepcion*/
     }
   }
   
@@ -174,6 +209,12 @@ void flash()
   { 
     if(flagIE==1)
       flagIE=2;
+  }
+
+  if(contador == 8)
+  {
+    if(flagConfigP==1)
+      flagConfigP=2;
   }
 }
 

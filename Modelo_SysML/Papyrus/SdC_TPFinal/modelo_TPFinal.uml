@@ -8,38 +8,46 @@
           <ownedUseCase xmi:type="uml:UseCase" xmi:id="_xnSmUB6EEeiPi6yS5N9O7w" name="Accionar pulsador" visibility="package"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_Bkp3YB6EEeiPi6yS5N9O7w" name="Cargar alimento" visibility="public" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_E3IMUB9WEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_E3JacB9WEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_qpkXgB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Actor" xmi:id="_Gl8nAB6EEeiPi6yS5N9O7w" name="Servidor Ubidots"/>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_X5cIEB6EEeiPi6yS5N9O7w" name="Visualizar porcentaje de carga" visibility="public" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="__6sHgB9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="__6zcQB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_sBZGEB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_2vyKIB6EEeiPi6yS5N9O7w" name="Acceso a aplicacion APF" visibility="public" subject="_wB5LQB6DEeiPi6yS5N9O7w">
-          <extend xmi:type="uml:Extend" xmi:id="_qpjwcB6KEeiPi6yS5N9O7w" extendedCase="_Bkp3YB6EEeiPi6yS5N9O7w" extensionLocation="_qpkXgB6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_sBYfAB6KEeiPi6yS5N9O7w" extendedCase="_X5cIEB6EEeiPi6yS5N9O7w" extensionLocation="_sBZGEB6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_utRdgB6KEeiPi6yS5N9O7w" extendedCase="_-vxDAB6FEeiPi6yS5N9O7w" extensionLocation="_utRdgR6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_vmj18B6KEeiPi6yS5N9O7w" extendedCase="_J551oB6FEeiPi6yS5N9O7w" extensionLocation="_vmj18R6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_wjyTMB6KEeiPi6yS5N9O7w" extendedCase="_h4CCsB6FEeiPi6yS5N9O7w" extensionLocation="_wjy6QB6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_zK--8B6KEeiPi6yS5N9O7w" extendedCase="_tB220B6FEeiPi6yS5N9O7w" extensionLocation="_zK_mAB6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_0014sB6KEeiPi6yS5N9O7w" extendedCase="_Q8JT4B6GEeiPi6yS5N9O7w" extensionLocation="_002fwB6KEeiPi6yS5N9O7w"/>
-          <extend xmi:type="uml:Extend" xmi:id="_3qvu0B6KEeiPi6yS5N9O7w" extendedCase="_2ensMB6FEeiPi6yS5N9O7w" extensionLocation="_3qvu0R6KEeiPi6yS5N9O7w"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_ozilwB9VEeibLJO0t8fAKw" name="ExtensionPoint1"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_xJ2wcB9VEeibLJO0t8fAKw" name="ExtensionPoint2"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_zeDAoB9VEeibLJO0t8fAKw" name="ExtensionPoint3"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_5Fr-kB9VEeibLJO0t8fAKw" name="ExtensionPoint4"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_8suWsB9VEeibLJO0t8fAKw" name="ExtensionPoint5"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_-ZR_IB9VEeibLJO0t8fAKw" name="ExtensionPoint6"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="__6zcQB9VEeibLJO0t8fAKw" name="ExtensionPoint7"/>
+          <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_E3JacB9WEeibLJO0t8fAKw" name="ExtensionPoint8"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_J551oB6FEeiPi6yS5N9O7w" name="Solicitar porcentaje de carga" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_8sqsUB9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_8suWsB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_vmj18R6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_h4CCsB6FEeiPi6yS5N9O7w" name="Establecer conexion a internet" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_5FqJYB9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_5Fr-kB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_wjy6QB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_tB220B6FEeiPi6yS5N9O7w" name="Establcer numero de cargas" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_zeAkYB9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_zeDAoB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_zK_mAB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_2ensMB6FEeiPi6yS5N9O7w" name="Aplicar cargas fijas" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_xJ07QB9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_xJ2wcB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_3qvu0R6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_-vxDAB6FEeiPi6yS5N9O7w" name="Visualizar modo de cargas fijas" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_-ZQJ8B9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_-ZR_IB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_utRdgR6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:UseCase" xmi:id="_Q8JT4B6GEeiPi6yS5N9O7w" name="Notificar SMS cuando carga es &lt;= 33%" subject="_wB5LQB6DEeiPi6yS5N9O7w">
+          <extend xmi:type="uml:Extend" xmi:id="_ozRgAB9VEeibLJO0t8fAKw" extendedCase="_2vyKIB6EEeiPi6yS5N9O7w" extensionLocation="_ozilwB9VEeibLJO0t8fAKw"/>
           <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_002fwB6KEeiPi6yS5N9O7w" name="ExtensionPoint1"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_dYEpEB6GEeiPi6yS5N9O7w" memberEnd="_dYITcB6GEeiPi6yS5N9O7w _dYI6gB6GEeiPi6yS5N9O7w">
