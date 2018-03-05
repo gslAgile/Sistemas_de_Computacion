@@ -206,6 +206,10 @@ while (comando!='3'):
 				variable = api.get_variable("5a4dba34c03f9774e0a8dd57")
 				porcentaje_alimento = api.get_variable("5a60647bc03f9707bd47f11d")
 				mostrar = api.get_variable("5a611773c03f97436c5ee58e")
+				modo_temp = api.get_variable("5a9c9cddc03f975850ca4c78")
+				segundos_app = api.get_variable("5a9c9d04c03f9757ec172ad4")
+				minutos_app = api.get_variable("5a9c9d0dc03f9758d24f78b7")
+				numero_cargas_app = api.get_variable("5a9c9d23c03f9758d24f78be")
 				print("Conexion exitosa!!!")
 			except:
 				print("FALLO LA CONEXION API")
@@ -214,6 +218,10 @@ while (comando!='3'):
 			print("\n--- Pet Feeder en MODO REMOTO ---")
 			print(" Analizando variables desde API UBIDOTS")
 			print(" Para salir presione [Ctrl + c]\n")
+			ingreso_modoTemp=0
+			segundos_actual=10
+			minutos_actual=0
+			numero_cargas_actual=1
 			while True:
 				try:
 					
@@ -222,19 +230,75 @@ while (comando!='3'):
 						if pulsador==0:
 							print('Boton virtual: Encendido')
 							print('Enviando por puerto serial. Datos enviados: 1')
-							arduino.write("1") # Mando dato hacia Arduino
+							contador_carga_temp=numero_cargas_actual
+							while(contador_carga_temp>0):
+								arduino.write("1") # Mando dato hacia Arduino
+								contador_carga_temp=contador_carga_temp-1
+								sleep(0.8)
 							new_value = variable.save_value({'value': 0})
 
-					sleep(1)
-					visualizar = mostrar.get_values(1)
-					if visualizar[0].get("value") == 1:
+					#sleep(0.2)
+					visualizar_p = mostrar.get_values(1)
+					if visualizar_p[0].get("value") == 1:
 						arduino.write(comando) # Mando dato hacia Arduino
 						recepcion_arduino=arduino.readline() # Espero recepcion de arduino
 						print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
 						aux = int(recepcion_arduino) # convierto cadena a entero
 						new_pa = porcentaje_alimento.save_value({'value': aux})
+						new_mostar = mostrar.save_value({'value': 0})
 
-					sleep(1) # Sleep for 1 seconds
+					modoTemp_main = modo_temp.get_values(1)
+					if modoTemp_main[0].get("value")==1:
+						segundos_appmain = segundos_app.get_values(1)
+						minutos_appmain = minutos_app.get_values(1)
+						if segundos_appmain[0].get("value")!=segundos_actual:
+							segundos_actual=segundos_appmain[0].get("value")
+							arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador
+							sleep(0.3)
+							arduino.write("r") # Mando dato hacia Arduino, borro segundos configurados
+
+							# Configuro nuevos segundos
+							print('Arduino-Uno-Config:~$ Numero de segundos configurado a '+str(segundos_actual))
+							contador_main=segundos_actual # segundos_appmain[0].get("value")
+							ingreso_modoTemp=0 # aviso de reseteo de confuguracion
+							while contador_main>0:
+								arduino.write("s") # Mando dato hacia Arduino
+								contador_main= contador_main-1;
+								sleep(0.1)
+
+						if minutos_appmain[0].get("value")!=minutos_actual:
+							minutos_actual=minutos_appmain[0].get("value")
+							arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador
+							sleep(0.3)
+							arduino.write("n") # Mando dato hacia Arduino, borro minutos configurados
+							print('Arduino-Uno-Config:~$ Numero de minutos configurado a '+str(minutos_actual))
+							contador_main = minutos_actual # minutos_appmain[0].get("value")
+							ingreso_modoTemp=0 # aviso de reseteo de confuguracion
+							while contador_main>0:
+								arduino.write("m") # Mando dato hacia Arduino
+								contador_main= contador_main-1;
+								sleep(0.1)
+
+						if ingreso_modoTemp==0:
+							sleep(1)
+							arduino.write("4") # Mando dato hacia Arduino, habilito modo de cargas por temporizador
+							ingreso_modoTemp=1 # aviso de configuracion por temp cumplida
+							print('Arduino-Uno-Config:~$ Modo de cargas fijas por tiempo, habilitado con exito.')
+
+					if modoTemp_main[0].get("value")==0:
+						if ingreso_modoTemp==1:
+							sleep(0.5)
+							ingreso_modoTemp=0 # reseteo de confuguracion
+							arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador
+							print('Arduino-Uno-Config:~$ Modo de cargas fijas por tiempo, deshabilitado con exito.')
+
+					numero_cargas_main=numero_cargas_app.get_values(1)
+					if numero_cargas_main[0].get("value")!=numero_cargas_actual:
+						numero_cargas_actual=numero_cargas_main[0].get("value")
+						contador_main = numero_cargas_actual
+						print('Arduino-Uno-Config:~$ Numero de carga configurado a '+str(numero_cargas_actual))
+
+					# sleep(0.5) # Sleep for 1 seconds
 
 				except KeyboardInterrupt: # ctrl+C
 					print "\nCerrando aplicacion...."

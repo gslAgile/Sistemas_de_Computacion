@@ -36,6 +36,7 @@ volatile int minutos_conf=0;
 volatile int segundos=0;
 volatile int minutos=0;
 volatile byte flagTemp=0;
+volatile byte flagTemp_OK=0;
 
 /* Otras variables globales*/
 volatile int duracion;
@@ -45,6 +46,7 @@ int porcentaje=0;
 const int PinLedRed=4;
 const int PinLedYellow=8;
 const int PinLedGreen=12;
+const int PinLedBlue=11;
 const int EchoPin = 9;
 const int TriggerPin = 10;
 
@@ -55,6 +57,7 @@ void setup(){
   pinMode(PinLedRed, OUTPUT);
   pinMode(PinLedYellow, OUTPUT);
   pinMode(PinLedGreen, OUTPUT);
+  pinMode(PinLedBlue, OUTPUT);
 
   /* Configuraciones para sensor ultrasonico: sensor de distancia */
   pinMode(TriggerPin, OUTPUT);  /* trigger como salida */
@@ -105,6 +108,18 @@ void loop(){
   {
     servo1.write(pos_start);    /* ubica el servo a posicion final en grados */
     flagConfigP=0;
+  }
+
+  if(flagTemp && !flagTemp_OK)
+  {
+     digitalWrite(PinLedBlue, HIGH);
+     flagTemp_OK=1;
+  }
+
+  if(!flagTemp && flagTemp_OK)
+  {
+     digitalWrite(PinLedBlue, LOW);
+     flagTemp_OK=0;
   }
 
   if(flagSD==1)
@@ -185,6 +200,7 @@ void flash()
       if (c == '1') {               /* Si es '1', giro servo */
          contador=0;
          flagIE=1;
+         flagSD=1;
       } 
       else if (c == '2') {        /* Si es una '2', envio calculo de distancia por UART */
          flagSD=1;
