@@ -47,6 +47,7 @@ while (comando!='3'):
 						arduino.write(comando2) # Mando dato hacia Arduino
 						contador_op1_temp=contador_op1_temp-1
 						sleep(0.8)
+					arduino.write("2") # actualizo porcentaje
 				elif comando2 == '2':
 					print('Enviando por puerto serial. Datos: '+comando2)
 					arduino.write(comando2) # Mando dato hacia Arduino
@@ -236,11 +237,16 @@ while (comando!='3'):
 								contador_carga_temp=contador_carga_temp-1
 								sleep(0.8)
 							new_value = variable.save_value({'value': 0})
+							arduino.write("2") # pido porcentage
+							recepcion_arduino=arduino.readline() # Espero recepcion de arduino
+							aux = int(recepcion_arduino) # convierto cadena a entero
+							new_pa = porcentaje_alimento.save_value({'value': aux})
 
 					#sleep(0.2)
 					visualizar_p = mostrar.get_values(1)
 					if visualizar_p[0].get("value") == 1:
-						arduino.write(comando) # Mando dato hacia Arduino
+						arduino.write("2") # Mando dato hacia Arduino
+						sleep(0.3)
 						recepcion_arduino=arduino.readline() # Espero recepcion de arduino
 						print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
 						aux = int(recepcion_arduino) # convierto cadena a entero
@@ -280,16 +286,24 @@ while (comando!='3'):
 								sleep(0.1)
 
 						if ingreso_modoTemp==0:
-							sleep(1)
 							arduino.write("4") # Mando dato hacia Arduino, habilito modo de cargas por temporizador
+							sleep(0.2)
+							#arduino.write("1") # (refuerzo) para habilitar modo en caso de falla
+							arduino.write("4") # Mando dato hacia Arduino, habilito modo de cargas por temporizador (refuerzo)
 							ingreso_modoTemp=1 # aviso de configuracion por temp cumplida
 							print('Arduino-Uno-Config:~$ Modo de cargas fijas por tiempo, habilitado con exito.')
 
+						if ingreso_modoTemp==1:
+							recepcion_arduino=arduino.readline() # Espero recepcion de arduino
+							aux = int(recepcion_arduino) # convierto cadena a entero
+							new_pa = porcentaje_alimento.save_value({'value': aux})
+
 					if modoTemp_main[0].get("value")==0:
 						if ingreso_modoTemp==1:
-							sleep(0.5)
 							ingreso_modoTemp=0 # reseteo de confuguracion
 							arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador
+							sleep(0.2)
+							arduino.write("5") # Mando dato hacia Arduino, deshabilito modo de cargas por temporizador (refuerzo)
 							print('Arduino-Uno-Config:~$ Modo de cargas fijas por tiempo, deshabilitado con exito.')
 
 					numero_cargas_main=numero_cargas_app.get_values(1)

@@ -290,6 +290,7 @@ void flash()
     {
       contador=0;
       flagIE=1;
+      flagSD=1;
       segundos=0;
       minutos=0;
     }
