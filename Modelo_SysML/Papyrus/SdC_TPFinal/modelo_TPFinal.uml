@@ -129,7 +129,7 @@
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_ePvV4B5PEei3CJhlKV9zDg" name="Diagrama de actividades">
-        <packagedElement xmi:type="uml:Activity" xmi:id="_laJuIB5PEei3CJhlKV9zDg" name="Carga de alimento" node="_By39kB5YEei3CJhlKV9zDg _HvlMkB5YEei3CJhlKV9zDg _NTtjgB5YEei3CJhlKV9zDg _fBsoMB5YEei3CJhlKV9zDg _rXGeoB5YEei3CJhlKV9zDg _OAXYsB5ZEei3CJhlKV9zDg _e6180B5ZEei3CJhlKV9zDg _fWbsoB5ZEei3CJhlKV9zDg _fgzwoB5ZEei3CJhlKV9zDg _fq6H0B5ZEei3CJhlKV9zDg __ESwEB5aEei3CJhlKV9zDg _Vn-YYB5bEei3CJhlKV9zDg _MOsfYB5cEei3CJhlKV9zDg _kEX7EB5cEei3CJhlKV9zDg __H_SYB5cEei3CJhlKV9zDg _JD3ssB5dEei3CJhlKV9zDg _88G0MB5dEei3CJhlKV9zDg _sqag0B59EeiPi6yS5N9O7w _6Z2sUB59EeiPi6yS5N9O7w _Gcc7gB5-EeiPi6yS5N9O7w _ZZnJEB5-EeiPi6yS5N9O7w _tgD58B5-EeiPi6yS5N9O7w">
+        <packagedElement xmi:type="uml:Activity" xmi:id="_laJuIB5PEei3CJhlKV9zDg" name="Carga de alimento" node="_e6180B5ZEei3CJhlKV9zDg _fWbsoB5ZEei3CJhlKV9zDg _fgzwoB5ZEei3CJhlKV9zDg _fq6H0B5ZEei3CJhlKV9zDg _Vn-YYB5bEei3CJhlKV9zDg _Zec0ECFjEeiyY7Nm0OZv1g _hMvVcCFjEeiyY7Nm0OZv1g _oORegCFjEeiyY7Nm0OZv1g _tgD58B5-EeiPi6yS5N9O7w _Gcc7gB5-EeiPi6yS5N9O7w _sqag0B59EeiPi6yS5N9O7w _6Z2sUB59EeiPi6yS5N9O7w _ZZnJEB5-EeiPi6yS5N9O7w _fBsoMB5YEei3CJhlKV9zDg __H_SYB5cEei3CJhlKV9zDg _NTtjgB5YEei3CJhlKV9zDg _kEX7EB5cEei3CJhlKV9zDg _OAXYsB5ZEei3CJhlKV9zDg _rXGeoB5YEei3CJhlKV9zDg _HvlMkB5YEei3CJhlKV9zDg _JD3ssB5dEei3CJhlKV9zDg _By39kB5YEei3CJhlKV9zDg _MOsfYB5cEei3CJhlKV9zDg __ESwEB5aEei3CJhlKV9zDg _88G0MB5dEei3CJhlKV9zDg">
           <edge xmi:type="uml:ControlFlow" xmi:id="_98cCEB5YEei3CJhlKV9zDg" target="_By39kB5YEei3CJhlKV9zDg" source="_rXGeoB5YEei3CJhlKV9zDg"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_ezqr4B5bEei3CJhlKV9zDg" target="__ESwEB5aEei3CJhlKV9zDg" source="_By39kB5YEei3CJhlKV9zDg"/>
           <edge xmi:type="uml:ControlFlow" xmi:id="_f3ybUB5bEei3CJhlKV9zDg" name="true" target="_HvlMkB5YEei3CJhlKV9zDg" source="__ESwEB5aEei3CJhlKV9zDg"/>
@@ -154,7 +154,7 @@
           <node xmi:type="uml:CreateObjectAction" xmi:id="_NTtjgB5YEei3CJhlKV9zDg" name="Envia datos (UART)" incoming="_D-AJoB5eEei3CJhlKV9zDg" outgoing="_z2yn8B59EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:ActivityFinalNode" xmi:id="_fBsoMB5YEei3CJhlKV9zDg" name="Fin de carga" incoming="_pghiQB5-EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:InitialNode" xmi:id="_rXGeoB5YEei3CJhlKV9zDg" name="Presionar pulsador" outgoing="_98cCEB5YEei3CJhlKV9zDg"/>
-          <node xmi:type="uml:CreateObjectAction" xmi:id="_OAXYsB5ZEei3CJhlKV9zDg" name="Enciende Led verde" incoming="_Wky7EB5dEei3CJhlKV9zDg" outgoing="_Ba7I4B5eEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_OAXYsB5ZEei3CJhlKV9zDg" name="Enciende Led amarillo" incoming="_Wky7EB5dEei3CJhlKV9zDg" outgoing="_Ba7I4B5eEei3CJhlKV9zDg"/>
           <node xmi:type="uml:CallBehaviorAction" xmi:id="_e6180B5ZEei3CJhlKV9zDg" name="CallBehaviorAction1" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
           <node xmi:type="uml:CallBehaviorAction" xmi:id="_fWbsoB5ZEei3CJhlKV9zDg" name="CallBehaviorAction2" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
           <node xmi:type="uml:CallBehaviorAction" xmi:id="_fgzwoB5ZEei3CJhlKV9zDg" name="CallBehaviorAction3" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
@@ -163,14 +163,17 @@
           <node xmi:type="uml:CallBehaviorAction" xmi:id="_Vn-YYB5bEei3CJhlKV9zDg" name="CallBehaviorAction5" behavior="_laJuIB5PEei3CJhlKV9zDg"/>
           <node xmi:type="uml:CreateObjectAction" xmi:id="_MOsfYB5cEei3CJhlKV9zDg" name="Obtener porcentaje de carga (p)" incoming="_a9RzsB5cEei3CJhlKV9zDg" outgoing="_rYY7QB5cEei3CJhlKV9zDg"/>
           <node xmi:type="uml:DecisionNode" xmi:id="_kEX7EB5cEei3CJhlKV9zDg" name="Desicion de porcentaje" incoming="_rYY7QB5cEei3CJhlKV9zDg" outgoing="_VOkH8B5dEei3CJhlKV9zDg _V6-iAB5dEei3CJhlKV9zDg _Wky7EB5dEei3CJhlKV9zDg"/>
-          <node xmi:type="uml:CreateObjectAction" xmi:id="__H_SYB5cEei3CJhlKV9zDg" name="Enciende LED rojo" incoming="_V6-iAB5dEei3CJhlKV9zDg" outgoing="_CLTc8B5eEei3CJhlKV9zDg"/>
-          <node xmi:type="uml:CreateObjectAction" xmi:id="_JD3ssB5dEei3CJhlKV9zDg" name="Enciende LED amarillo" incoming="_VOkH8B5dEei3CJhlKV9zDg" outgoing="_edMNIB59EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="__H_SYB5cEei3CJhlKV9zDg" name="Enciende LED verde" incoming="_V6-iAB5dEei3CJhlKV9zDg" outgoing="_CLTc8B5eEei3CJhlKV9zDg"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_JD3ssB5dEei3CJhlKV9zDg" name="Enciende LED rojo" incoming="_VOkH8B5dEei3CJhlKV9zDg" outgoing="_edMNIB59EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:MergeNode" xmi:id="_88G0MB5dEei3CJhlKV9zDg" name="" incoming="_Ba7I4B5eEei3CJhlKV9zDg _CLTc8B5eEei3CJhlKV9zDg _edMNIB59EeiPi6yS5N9O7w" outgoing="_D-AJoB5eEei3CJhlKV9zDg"/>
           <node xmi:type="uml:CreateObjectAction" xmi:id="_sqag0B59EeiPi6yS5N9O7w" name="Recepcion de datos (UART)" incoming="_z2yn8B59EeiPi6yS5N9O7w" outgoing="_BebiUB5-EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:CreateObjectAction" xmi:id="_6Z2sUB59EeiPi6yS5N9O7w" name="Retroalimenta aplicacion APF" incoming="_BebiUB5-EeiPi6yS5N9O7w" outgoing="_PqIzEB5-EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:CreateObjectAction" xmi:id="_Gcc7gB5-EeiPi6yS5N9O7w" name="Actualizar variables con API" incoming="_PqIzEB5-EeiPi6yS5N9O7w" outgoing="_nUGuAB5-EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:DecisionNode" xmi:id="_ZZnJEB5-EeiPi6yS5N9O7w" name="Si p &lt;=33%" incoming="_nUGuAB5-EeiPi6yS5N9O7w" outgoing="_pghiQB5-EeiPi6yS5N9O7w _15Y8YB5-EeiPi6yS5N9O7w"/>
           <node xmi:type="uml:CreateObjectAction" xmi:id="_tgD58B5-EeiPi6yS5N9O7w" name="Notificar con sms" incoming="_15Y8YB5-EeiPi6yS5N9O7w"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_Zec0ECFjEeiyY7Nm0OZv1g" name="Arduino - Hardware"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_hMvVcCFjEeiyY7Nm0OZv1g" name="PC - Aplicacion APF"/>
+          <node xmi:type="uml:CreateObjectAction" xmi:id="_oORegCFjEeiyY7Nm0OZv1g" name="Servidor Ubidots"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
