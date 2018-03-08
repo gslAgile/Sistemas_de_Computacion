@@ -9,7 +9,8 @@ from ubidots import ApiClient
 from time import sleep
 
 #arduino = serial.Serial('/dev/ttyACM0', 9600)
-arduino = serial.Serial('/dev/ttyUSB0', 9600) 
+arduino = serial.Serial('/dev/ttyUSB0', 9600)
+arduino_file = open("/dev/ttyUSB0", "r")
 comando="1"
 pulsador=0
 contador_op1=1
@@ -48,10 +49,11 @@ while (comando!='3'):
 						contador_op1_temp=contador_op1_temp-1
 						sleep(0.8)
 					arduino.write("2") # actualizo porcentaje
+					recepcion_arduino0=arduino.readline() # Espero recepcion de arduino
 				elif comando2 == '2':
 					print('Enviando por puerto serial. Datos: '+comando2)
 					arduino.write(comando2) # Mando dato hacia Arduino
-					recepcion_arduino=arduino.readline() # Espero recpcion de arduino
+					recepcion_arduino=arduino.readline() # Espero recepcion de arduino
 					print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
 					#aux = int(recepcion_arduino) # convierto cadena a entero # Saco lineas pq no son del modo remoto
 					#new_value = porcentaje_alimento.save_value({'value': aux}) # Saco lineas pq no son del modo remoto
@@ -85,7 +87,7 @@ while (comando!='3'):
 
 
 						else:
-							print('Arduino-Uno-Config:~$ Fallo peticion de incremento/decremento de angulo, recepcion: '+aux)
+							print('Arduino-Uno-Config:~$ Fallo peticion de incremento/decremento de angulo, recepcion: '+str(aux))
 						continuar_op3 = raw_input('Continuar posicionando? Ingrese 1 para continuar, o 0 para salir: ') #Input
 
 				elif comando2 == '4':
@@ -118,7 +120,7 @@ while (comando!='3'):
 
 
 						else:
-							print('Arduino-Uno-Config:~$ Fallo peticion de incremento/decremento de angulo, recepcion: '+aux)
+							print('Arduino-Uno-Config:~$ Fallo peticion de incremento/decremento de angulo, recepcion: '+str(aux))
 						continuar_op4 = raw_input('Continuar posicionando? Ingrese 1 para continuar, o 0 para salir: ') #Input
 				
 				elif comando2 == '5':
@@ -191,6 +193,7 @@ while (comando!='3'):
 				elif comando2 == '9':
 					print "\nCerrando aplicacion...."
 					arduino.close() # Finalizamos la comunicacion UART
+					arduino_file.close()
 					sys.exit()
 					exit(0)
 				else:
@@ -238,18 +241,18 @@ while (comando!='3'):
 								sleep(0.8)
 							new_value = variable.save_value({'value': 0})
 							arduino.write("2") # pido porcentage
-							recepcion_arduino=arduino.readline() # Espero recepcion de arduino
-							aux = int(recepcion_arduino) # convierto cadena a entero
+							recepcion_arduinoMR1=arduino.readline() # Espero recepcion de arduino
+							aux = int(recepcion_arduinoMR1) # convierto cadena a entero
 							new_pa = porcentaje_alimento.save_value({'value': aux})
 
-					#sleep(0.2)
+					sleep(0.2)
 					visualizar_p = mostrar.get_values(1)
 					if visualizar_p[0].get("value") == 1:
 						arduino.write("2") # Mando dato hacia Arduino
 						sleep(0.3)
-						recepcion_arduino=arduino.readline() # Espero recepcion de arduino
-						print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduino)
-						aux = int(recepcion_arduino) # convierto cadena a entero
+						recepcion_arduinoMR2=arduino.readline() # Espero recepcion de arduino
+						print('Arduino-Uno:~$ El nivel de alimento es: '+recepcion_arduinoMR2)
+						aux = int(recepcion_arduinoMR2) # convierto cadena a entero
 						new_pa = porcentaje_alimento.save_value({'value': aux})
 						new_mostar = mostrar.save_value({'value': 0})
 
@@ -294,8 +297,8 @@ while (comando!='3'):
 							print('Arduino-Uno-Config:~$ Modo de cargas fijas por tiempo, habilitado con exito.')
 
 						if ingreso_modoTemp==1:
-							recepcion_arduino=arduino.readline() # Espero recepcion de arduino
-							aux = int(recepcion_arduino) # convierto cadena a entero
+							recepcion_arduinoMR3=arduino.readline() # Espero recepcion de arduino
+							aux = int(recepcion_arduinoMR3) # convierto cadena a entero
 							new_pa = porcentaje_alimento.save_value({'value': aux})
 
 					if modoTemp_main[0].get("value")==0:
@@ -312,16 +315,18 @@ while (comando!='3'):
 						contador_main = numero_cargas_actual
 						print('Arduino-Uno-Config:~$ Numero de carga configurado a '+str(numero_cargas_actual))
 
-					# sleep(0.5) # Sleep for 1 seconds
+					#sleep(0.5) # Sleep for 1 seconds
 
 				except KeyboardInterrupt: # ctrl+C
 					print "\nCerrando aplicacion...."
 					arduino.close() # Finalizamos la comunicacion UART
+					arduino_file.close()
 					sys.exit()
 			
 		elif comando == '3':
 			print "\nCerrando aplicacion...."
 			arduino.close() # Finalizamos la comunicacion UART
+			arduino_file.close()
 			sys.exit()
 			exit(0)
 
@@ -333,4 +338,5 @@ while (comando!='3'):
 	except KeyboardInterrupt: # ctrl+C
 		print "\nCerrando aplicacion...."
 		arduino.close() # Finalizamos la comunicacion UART
+		arduino_file.close()
 		sys.exit()

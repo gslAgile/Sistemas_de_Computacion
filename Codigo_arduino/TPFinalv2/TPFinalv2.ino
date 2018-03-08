@@ -22,6 +22,7 @@ volatile int pos_start=0;
 /* Variables interrupcion externa 0 */
 const int PinUARTInterrupt=2; /* pin de interrupcion externa para deteccion de recepcion UART: pin 3*/
 int flagRx=0;
+volatile byte flagTx=0; /* Bandera o indicador para avisar cuando se quiere transmitir por UART*/
 char c;
 
 /* Variables interrupcion externa 1*/
@@ -145,7 +146,11 @@ void loop(){
 
     porcentaje_led(porcentaje);
 
-    Serial.println(porcentaje);    /* envio de valor de porcentaje por monitor*/
+    if(flagTx)
+    {
+      Serial.println(porcentaje);    /* envio de valor de porcentaje por monitor*/
+      flagTx=0;
+    }
   }
 }
 
@@ -172,7 +177,7 @@ void porcentaje_led(int p_porcentaje)
       digitalWrite(PinLedGreen, HIGH);
     }
     
-    else if(p_porcentaje<=66 && p_porcentaje>33)
+    else if(p_porcentaje<=66 && p_porcentaje>30)
     {
       digitalWrite(PinLedRed, LOW);
       digitalWrite(PinLedYellow, HIGH);
@@ -204,6 +209,7 @@ void flash()
       } 
       else if (c == '2') {        /* Si es una '2', envio calculo de distancia por UART */
          flagSD=1;
+         flagTx=1;
       }
       else if (c == '3') {        /* Si es una '3', configuracion de posicion cero en servo */
          flagConfigP=1;
@@ -291,6 +297,7 @@ void flash()
       contador=0;
       flagIE=1;
       flagSD=1;
+      flagTx=1;
       segundos=0;
       minutos=0;
     }
